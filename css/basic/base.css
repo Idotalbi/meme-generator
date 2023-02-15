@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+
+img {
+    width: 200px;
+}
+
+.editor-container {
+    display: none;
+}
+
+header {
+    display: flex;
+    font-family: poppins;
+}
+
+body {
+    font-size: 1.312rem;
+}

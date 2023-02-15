@@ -1,16 +1,12 @@
-* {
-    box-sizing: border-box;
-}
+/* SET UP */
+@import url(./setup/vars.css);
+@import url(./setup/typography.css);
 
-img {
-    width: 200px;
-}
+/* BASE */
+@import url(./basic/base.css);
+@import url(./basic/helpers.css);
+@import url(./basic/layout.css);
 
-.editor-container {
-    display: none;
-}
-
-header {
-    display: flex;
-    
-}
+/* COMPONENTS */
+@import url(./components/header.css);
+/* @import url(./components/header.css); */
