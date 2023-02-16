@@ -1,5 +1,10 @@
 :root {
+    --clr4: #383b42;
+    --clr3: #22252C;
     --clr2: #21ac91;
     --clr1: #fefefe;
     --clr-1: #ffffff;
+    --clr0:linear-gradient(-86deg, #33be6d 0%, #0c98b9 100%);
+    
+    --nav-height:100px
 }

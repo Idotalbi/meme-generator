@@ -4,9 +4,14 @@
 
 /* BASE */
 @import url(./basic/base.css);
-@import url(./basic/helpers.css);
 @import url(./basic/layout.css);
+@import url(./basic/helpers.css);
 
 /* COMPONENTS */
 @import url(./components/header.css);
-/* @import url(./components/header.css); */
+@import url(./components/logo.css);
+@import url(./components/screen.css);
+@import url(./components/gallery.css);
+
+/* MEDIA QUERY */
+@import url(./setup/mq.css);

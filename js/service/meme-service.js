@@ -21,6 +21,7 @@ var gImgs = [
     { id: 17, url: 'img/17.jpg', keywords: ['love', 'dog'] },
     { id: 18, url: 'img/18.jpg', keywords: ['love', 'dog'] },
 ]
+
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
@@ -31,14 +32,11 @@ var gMeme = {
             align: 'center',
             txtColor: 'white',
             fillColor: 'black',
-        },
-        {
-            txt: 'Enter Text Here',
-            size: 50,
-            align: 'center',
-            txtColor: 'white',
-            fillColor: 'black',
+            font: 'poppins',
+            posX: 200,
+            posY: 60,
         }
+
     ]
 }
 
@@ -50,6 +48,7 @@ function setLineTxt(value) {
     const line = gMeme.lines[gMeme.selectedLineIdx]
     line.txt = value
 }
+
 function setLineColor(value) {
     const line = gMeme.lines[gMeme.selectedLineIdx]
     line.txtColor = value
@@ -59,7 +58,6 @@ function setFillColor(value) {
     const line = gMeme.lines[gMeme.selectedLineIdx]
     line.fillColor = value
 }
-
 
 function getImgs() {
     return gImgs
@@ -74,6 +72,48 @@ function switchLine() {
         gMeme.selectedLineIdx = 0
         return
     }
-    document.querySelector('.txt-line-input').value = gMeme.lines[gMeme.selectedLineIdx].txt
     gMeme.selectedLineIdx++
+    document.querySelector('.txt-line-input').value = gMeme.lines[gMeme.selectedLineIdx].txt
 }
+
+function setLineMove(num) {
+    gMeme.lines[gMeme.selectedLineIdx].posY += num
+}
+
+function addLine(sticker) {
+    const lineCount = gMeme.lines.length
+    if (lineCount === 1) {
+
+        var line = {
+            txt: sticker || 'Enter Text Here',
+            size: 50,
+            align: 'center',
+            txtColor: 'white',
+            fillColor: 'black',
+            posX: 200,
+            posY: 350
+        }
+    } else line = {
+
+        txt: sticker || 'Enter Text Here',
+        size: 50,
+        align: 'center',
+        txtColor: 'white',
+        fillColor: 'black',
+        posX: 200,
+        posY: 200
+    }
+    gMeme.lines.push(line)
+    gMeme.selectedLineIdx = gMeme.lines.length - 1
+    return line
+}
+
+function removeLine() {
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+}
+
+function setFont(font) {
+    gMeme.lines[gMeme.selectedLineIdx].font = font
+}
+
+

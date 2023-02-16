@@ -1,0 +1,31 @@
+.gallery {
+    padding: 0.952rem;
+    background-color: var(--clr4);
+    margin: 14px;
+    margin-top: 114px;
+    border-radius: 0.476rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.428rem;
+    cursor: pointer;
+    box-shadow: 0px 2px 7px 0px;
+
+}
+
+.editor-container{
+    display: none;
+    grid-template-columns: 1fr 1fr;
+}
+
+.canvas-container {
+    margin-top: 50px;
+    margin-left: 100px;
+    padding: 0; 
+     object-fit: cover; 
+}
+
+.editor{
+    margin-top: 100px;
+}
+
+

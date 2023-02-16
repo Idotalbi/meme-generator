@@ -9,24 +9,30 @@
     <title>Document</title>
 </head>
 
-<body onload="onInit()">
-    <header class="main-header">
-        <div class="logo">MEMEGEN</div>
-        <nav class="main-nav">
-            <ul>
-                <li class="gallery-nav"><a href="#"onclick="showGallery()">Gallery</a></li>
-                <li class="memes-nav"><a href="#">Memes</a></li>
-                <li class="about-nav"><a href="#">About</a></li>
-            </ul>
-
-        </nav>
+<body class="main-layout" onload="onInit()">
+    <div class="main-screen" onclick="toggleMenu()"></div>
+    <header class="main-header full main-layout">
+        <section class="nav flex space-between align-center">
+            <div class="logo" onclick="showGallery()">MEMEGEN</div>
+            <div type="button" class="toggle-menu" onclick="toggleMenu()"></div>
+            <nav class="main-nav clean-list ">
+                <ul class="main-menu clean-list flex">
+                    <li class="gallery-nav" onclick="toggleMenu()"><a href="#" onclick="showGallery()">Gallery</a></li>
+                    <li class="memes-nav" onclick="toggleMenu()"><a href="#">Memes</a></li>
+                    <li class="about-nav" onclick="toggleMenu()"><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </section>
     </header>
 
+    <section class="gallery">
+    </section>
+    <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
     <main class="main-content">
-
-        <div class="gallery"></div>
-        <div class="img-container"></div>
-        <div class="editor-container" >
+        <div class="img-container">
+        </div>
+        <div class="editor-container">
+            <!-- <span class="bd-image flex  justify-content align-center "></span> -->
             <div class="canvas-container">
                 <canvas id="canvas" height="400" width="400"></canvas>
             </div>
@@ -35,15 +41,53 @@
                     oninput="onChangeTxt(this.value)">
                 <input type="color" class="input-txt-color" oninput="onChangeTxtColor(this.value)">
                 <input type="color" class="input-fill-color" oninput="onChangeFillColor(this.value)">
+                <select name="font" class="font-input" onchange="onChangeFont(value)">
+                    <option value="">Select Font</option>
+                    <option value="impact">impact</option>
+                    <option value="arial">arial</option>
+                    <option value="lobster">lobster</option>
+                    <option value="libre">libre</option>
+                    <option value="petit">petit</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="fantasy">fantasy</option>
+                </select>
+                <div class="stickers-container">
+                    <div class="stickers-input-container">
+                        <span class="stickers" onclick="onAddSticker(this)">❤️</span>
+                        <span class="stickers" onclick="onAddSticker(this)">🎈</span>
+                        <span class="stickers" onclick="onAddSticker(this)">👑</span>
+                        <span class="stickers" onclick="onAddSticker(this)">🎓</span>
+                        <span class="stickers" onclick="onAddSticker(this)">🤿</span>
+                        <span class="stickers" onclick="onAddSticker(this)">🪧</span>
+                        <span class="stickers" onclick="onAddSticker(this)">🔨</span>
+                        <span class="stickers" onclick="onAddSticker(this)">🎷</span>
+                        <span class="stickers" onclick="onAddSticker(this)">🥇</span>
+                        <span class="stickers" onclick="onAddSticker(this)">🎩</span>
+                        <span class="stickers" onclick="onAddSticker(this)">👓</span>
+                        <span class="stickers" onclick="onAddSticker(this)">🎁</span>
+                    </div>
+
+                </div>
+                <button class="btn btn-down-line" onclick="onLineDown()">↓</button>
+                <button class="btn btn-up-line" onclick="onLineUp()">↑</button>
+                <button class="btn btn-add-line" onclick="onAddLine()">+</button>
+                <button class="btn btn-delete-line" onclick="onDeleteLine()">delete</button>
                 <button class="btn btn-increase" onclick="onChangeFontSize(5)">A+</button>
                 <button class="btn btn-decrease" onclick="onChangeFontSize(-5)">A-</button>
                 <button class="btn btn-switch" onclick="onSwitchLine()">⇅</button>
+                <div class="inputs">
+                    <button class="btn" onclick="onUploadImg()">Share</button>
+                    <a href="#" class="btn" onclick="downloadImg(this)" download="my-meme.jpg">Download</a>
+                </div>
             </div>
         </div>
+ 
     </main>
 
     <script src="js/service/meme-service.js"></script>
     <!-- <script src="js/service/gallery-service.js"></script> -->
+    <script src="js/share-in-facebook.js"></script>
+    <script src="js/upload-from-local.js"></script>
     <script src="js/meme-controller.js"></script>
     <script src="js/gallery-controller.js"></script>
     <script src="js/main.js"></script>
