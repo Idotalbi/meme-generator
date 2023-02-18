@@ -32,25 +32,41 @@
         <div class="img-container">
         </div>
         <div class="editor-container">
-            <!-- <span class="bd-image flex  justify-content align-center "></span> -->
             <div class="canvas-container">
-                <canvas id="canvas" height="400" width="400"></canvas>
+                <canvas id="canvas" height="450" width="450"></canvas>
             </div>
+
             <div class="editor">
                 <input type="text" class="txt-line-input" placeholder="Enter Text Here"
                     oninput="onChangeTxt(this.value)">
-                <input type="color" class="input-txt-color" oninput="onChangeTxtColor(this.value)">
-                <input type="color" class="input-fill-color" oninput="onChangeFillColor(this.value)">
-                <select name="font" class="font-input" onchange="onChangeFont(value)">
-                    <option value="">Select Font</option>
-                    <option value="impact">impact</option>
-                    <option value="arial">arial</option>
-                    <option value="lobster">lobster</option>
-                    <option value="libre">libre</option>
-                    <option value="petit">petit</option>
-                    <option value="Georgia">Georgia</option>
-                    <option value="fantasy">fantasy</option>
-                </select>
+                <div class="line-delete">
+                    <button class="btn btn-switch" onclick="onSwitchLine()">⇅</button>
+                    <button class="btn btn-add-line" onclick="onAddLine()">+</button>
+                    <button class="btn btn-delete-line" onclick="onDeleteLine()">-</button>
+
+                </div>
+                <div class="editor-txt">
+                    <button class="btn btn-increase" onclick="onChangeFontSize(5)">A+</button>
+                    <button class="btn btn-decrease" onclick="onChangeFontSize(-5)">A-</button>
+                    <button class="btn btn-align-left" onclick="onAlign('left')">left</button>
+                    <button class="btn btn-align-center" onclick="onAlign('center')">☰</button>
+                    <button class="btn btn-align-right" onclick="onAlign('right')">right</button>
+                    <select name="font" class="font-input" onclick="onChangeFont(value)">
+                        <option value="">Select Font</option>
+                        <option value="impact">impact</option>
+                        <option value="arial">arial</option>
+                        <option value="lobster">lobster</option>
+                        <option value="libre">libre</option>
+                        <option value="petit">petit</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="fantasy">fantasy</option>
+                    </select>
+                    <input type="color" class="input-txt-color" oninput="onChangeTxtColor(this.value)">
+                    <input type="color" class="input-fill-color" oninput="onChangeFillColor(this.value)">
+                    <button class="btn btn-down-line" onclick="onLineDown()">↓</button>
+                    <button class="btn btn-up-line" onclick="onLineUp()">↑</button>
+                </div>
+
                 <div class="stickers-container">
                     <div class="stickers-input-container">
                         <span class="stickers" onclick="onAddSticker(this)">❤️</span>
@@ -68,24 +84,16 @@
                     </div>
 
                 </div>
-                <button class="btn btn-down-line" onclick="onLineDown()">↓</button>
-                <button class="btn btn-up-line" onclick="onLineUp()">↑</button>
-                <button class="btn btn-add-line" onclick="onAddLine()">+</button>
-                <button class="btn btn-delete-line" onclick="onDeleteLine()">delete</button>
-                <button class="btn btn-increase" onclick="onChangeFontSize(5)">A+</button>
-                <button class="btn btn-decrease" onclick="onChangeFontSize(-5)">A-</button>
-                <button class="btn btn-switch" onclick="onSwitchLine()">⇅</button>
                 <div class="inputs">
-                    <button class="btn" onclick="onUploadImg()">Share</button>
-                    <a href="#" class="btn" onclick="downloadImg(this)" download="my-meme.jpg">Download</a>
+                    <button class="btn btn-share" onclick="onUploadImg()">Share</button>
+                    <a href="#" class="btn btn-download" onclick="downloadImg(this)" download="my-meme.jpg">Download</a>
                 </div>
             </div>
         </div>
- 
+
     </main>
 
     <script src="js/service/meme-service.js"></script>
-    <!-- <script src="js/service/gallery-service.js"></script> -->
     <script src="js/share-in-facebook.js"></script>
     <script src="js/upload-from-local.js"></script>
     <script src="js/meme-controller.js"></script>

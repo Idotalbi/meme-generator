@@ -1,9 +1,9 @@
 'use strict'
 
 var gIsGallery = true
+
 function renderGallery() {
     const imgs = getImgs()
-    // console.log('img:', imgs)
     const strHTMLs = imgs.map((img) => {
         return `
         <article>
@@ -39,3 +39,4 @@ function hiddenGallery() {
         elMemeEditor.style.display = 'grid'
     
 }
+

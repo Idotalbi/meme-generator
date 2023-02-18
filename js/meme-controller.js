@@ -21,7 +21,7 @@ function renderMeme() {
         meme.lines.forEach(line => {
             drawText(line.txt, line.size, line.align, line.txtColor,
                 line.fillColor, line.font, line.posX, line.posY)
-      
+
         })
 
     }
@@ -95,5 +95,16 @@ function onAddSticker(elSticker) {
     const meme = getMeme()
     const sticker = elSticker.innerText
     const line = addLine(sticker)
+    renderMeme()
+}
+
+function renderImgFromUser(img) {
+    gCurrElImg = img
+    resizeCanvas(img)
+    renderMeme(gCurrElImg)
+}
+
+function onAlign(align) {
+    changeAlign(align)
     renderMeme()
 }

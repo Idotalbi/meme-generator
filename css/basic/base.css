@@ -31,5 +31,11 @@ p {
 button {
     font-family: inherit;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 0.8em;
+    /* width: 50px;
+    height: 50px; */
+}
+
+.stickers-input-container{
+    font-size: 1.5em;
 }

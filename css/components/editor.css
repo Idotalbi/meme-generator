@@ -1,0 +1,124 @@
+.txt-line-input {
+  font-size: 1.19rem;
+  text-align: center;
+  box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
+  border: none;
+  border-radius: 3rem;
+  text-transform: uppercase;
+  padding-block: 10px;
+  width: 80%;
+}
+
+/* CANVAS AREA */
+#canvas {
+  border-radius: 1.428em;
+  box-shadow: 0 0 1px 4px #c7bcbc4d;
+}
+
+.editor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.4em;
+  gap: 15px;
+
+  padding: 15px;
+  margin: 25px;
+  box-shadow: 1px 5px 0 #ebeef21a, inset 0 5px 0 #ebeef21a;
+  border-radius: 30px;
+  background-color: #ebeef21a;
+
+}
+
+.line-delete {
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+
+}
+
+.line-delete>* {
+  width: 2.714rem;
+  height: 2.523rem;
+  border-radius: 10px;
+  color: #ebeef3;
+  border: none;
+  text-align: center;
+  margin-inline: 11px;
+}
+
+.btn-delete-line {
+  padding-top: 5px;
+  box-shadow: 1px 5px 0 #8c0606, inset 0 5px 0 rgb(255 255 255 / 58%);
+  background-image: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #f05036 100%);
+  font-size: 1.1rem;
+  text-shadow: 1px 3px 0 rgb(140 6 6 / 61%);
+}
+
+.btn-add-line {
+  padding: 4px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 1px 5px 0 #015d33, inset 0 5px 0 rgb(255 255 255 / 58%);
+  border-radius: 10px;
+  background-image: linear-gradient(-38deg, #42eb5c 0%, #37b34a 100%);
+  text-shadow: 1px 3px 0 rgb(1 93 51 / 61%);
+}
+
+.btn-switch {
+  font-size: 1.1rem;
+  padding-top: 5px;
+  background-image: linear-gradient(-38deg, #66c4dc 0%, #40b1ce 50%, #0c98bb 100%);
+  box-shadow: 1px 5px 0 #048b97, inset 0 5px 0 rgb(255 255 255 / 58%);
+  text-shadow: 1px 3px rgb(0 0 0 / 33%);
+}
+
+
+.editor-txt {
+  border-radius: 0.714rem;
+  background-color: #19a59f;
+  padding: 15px 0;
+}
+
+.editor-txt>*{
+  margin: 9px 17px;
+  width: 2.714rem;
+  height: 2.523rem;
+  border-radius: 10px;
+  color: #22252c;
+  border: none;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 1px 5px 0 rgb(92 92 92 / 55%), inset 0 5px 0 rgb(255 255 255 / 58%);
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.font-input {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.btn-download{
+  text-decoration: none;
+  color: #ebeef3;
+
+  padding: 10px;
+  box-shadow: 1px 6px 0 #632687, inset 0 5px 0 #bf8acc;
+  border-radius: 15px;
+  background-color: #8f44bb;
+  margin-inline-start: 17px;
+}
+
+
+.btn-share{
+  color: #ebeef3;
+  box-shadow: 1px 6px 0 #165c9c, inset 0 5px 0 #6fc4ec;
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #1973c7;
+}
