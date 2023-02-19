@@ -1,7 +1,7 @@
 .txt-line-input {
   font-size: 1.19rem;
   text-align: center;
-  box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
+  box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 var(--clr-1);
   border: none;
   border-radius: 3rem;
   text-transform: uppercase;
@@ -20,9 +20,9 @@
 
   padding: 15px;
   margin: 25px;
-  box-shadow: 1px 5px 0 #ebeef21a, inset 0 5px 0 #ebeef21a;
+  box-shadow: 1px 5px 0 var(--clr5), inset 0 5px 0 var(--clr5);
   border-radius: 30px;
-  background-color: #ebeef21a;
+  background-color: var(--clr5);
 
 }
 
@@ -37,7 +37,7 @@
   width: 2.714rem;
   height: 2.523rem;
   border-radius: 10px;
-  color: #ebeef3;
+  color: var(--clr-2);
   border: none;
   text-align: center;
   margin-inline: 11px;
@@ -99,7 +99,7 @@
 
 .btn-download{
   text-decoration: none;
-  color: #ebeef3;
+  color:var(--clr-2);
 
   padding: 10px;
   box-shadow: 1px 6px 0 #632687, inset 0 5px 0 #bf8acc;
@@ -110,7 +110,7 @@
 
 
 .btn-share{
-  color: #ebeef3;
+  color:var(--clr-2);
   box-shadow: 1px 6px 0 #165c9c, inset 0 5px 0 #6fc4ec;
   border: none;
   padding: 10px;

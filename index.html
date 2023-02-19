@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
+    <title>MEMEGEN</title>
 </head>
 
 <body class="main-layout" onload="onInit()">
@@ -27,7 +27,7 @@
 
     <section class="gallery">
     </section>
-    <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+    <!-- <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" /> -->
     <main class="main-content">
         <div class="img-container">
         </div>
@@ -50,12 +50,12 @@
                 <div class="editor-txt">
                     <button class="btn btn-increase" onclick="onChangeFontSize(5)">A+</button>
                     <button class="btn btn-decrease" onclick="onChangeFontSize(-5)">A-</button>
-                    <button class="btn btn-align-left" onclick="onAlign('left')">
-                        <i class="fa-solid fa-align-left"></i>
-                    </button>
-                    <button class="btn btn-align-center" onclick="onAlign('center')">☰</button>
                     <button class="btn btn-align-right" onclick="onAlign('right')">
                         <i class="fa-solid fa-align-right"></i>
+                    </button>
+                    <button class="btn btn-align-center" onclick="onAlign('center')">☰</button>
+                    <button class="btn btn-align-left" onclick="onAlign('left')">
+                        <i class="fa-solid fa-align-left"></i>
                     </button>
                     <select name="font" class="font-input" onclick="onChangeFont(value)">
                         <option value="">Select Font</option>
@@ -67,10 +67,14 @@
                         <option value="Georgia">Georgia</option>
                         <option value="fantasy">fantasy</option>
                     </select>
-                    <input title="Text color" type="color" class="input-txt-color"
-                        oninput="onChangeTxtColor(this.value)">
-                    <input title="Fill color" type="color" class="input-fill-color"
-                        oninput="onChangeFillColor(this.value)">
+                    <label  class="fa-solid fa-pen" for="txt-color" name="txt-color">
+                        <input title="Text color" type="color" class="input-txt-color"
+                            oninput="onChangeTxtColor(this.value)">
+                    </label>
+                    <label class="fa-solid fa-palette" for="fill-color" name="fill-color">
+                        <input title="Fill color" type="color" name="fill-color" class="input-fill-color"
+                            oninput="onChangeFillColor(this.value)">
+                    </label>
                     <button title="Move Line" class="btn btn-down-line" onclick="onLineDown()">↓</button>
                     <button title="Move Line" class="btn btn-up-line" onclick="onLineUp()">↑</button>
                 </div>
