@@ -9,11 +9,6 @@
   width: 80%;
 }
 
-/* CANVAS AREA */
-#canvas {
-  border-radius: 1.428em;
-  box-shadow: 0 0 1px 4px #c7bcbc4d;
-}
 
 .editor{
   display: flex;

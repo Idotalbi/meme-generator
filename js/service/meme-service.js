@@ -33,11 +33,15 @@ var gMeme = {
             txtColor: 'white',
             fillColor: 'black',
             font: 'poppins',
-            posX: 200,
-            posY: 60,
+            pos: { x: 300, y: 60 },
+            isDrag: false,
         }
 
     ]
+}
+
+function getCurrLine() {
+    return gMeme.lines[gMeme.selectedLineIdx]
 }
 
 function getMeme() {
@@ -87,7 +91,7 @@ function changeAlign(align) {
 }
 
 function setLineMove(num) {
-    gMeme.lines[gMeme.selectedLineIdx].posY += num
+    gMeme.lines[gMeme.selectedLineIdx].pos.y += num
 }
 
 function addLine(sticker) {
@@ -100,8 +104,10 @@ function addLine(sticker) {
             align: 'center',
             txtColor: 'white',
             fillColor: 'black',
-            posX: 200,
-            posY: 350
+            pos: { x: 300, y: 350 },
+            isDrag: false,
+
+
         }
     } else line = {
 
@@ -110,13 +116,25 @@ function addLine(sticker) {
         align: 'center',
         txtColor: 'white',
         fillColor: 'black',
-        posX: 200,
-        posY: 200
+        pos: { x: 300, y: 500 },
+        isDrag: false,
+
+
     }
     gMeme.lines.push(line)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
     return line
 }
+
+function setSelectedLine(newLine) {
+    if (newLine === null) {
+        gMeme.selectedLineIdx = null
+        return
+    }
+    const selectedIdx = gMeme.lines.findIndex(line => line === newLine)
+    gMeme.selectedLineIdx = selectedIdx
+}
+
 
 function removeLine() {
     gMeme.lines.splice(gMeme.selectedLineIdx, 1)
@@ -124,5 +142,42 @@ function removeLine() {
 
 function setFont(font) {
     gMeme.lines[gMeme.selectedLineIdx].font = font
+}
+
+function isTxtClicked(clickedPos) {
+    const memePos = gMeme.lines[0].pos
+    // Calc the distance between two dots
+    const distance = Math.sqrt((memePos.x - clickedPos.x) ** 2 + (memePos.y - clickedPos.y) ** 2)
+    // console.log('distance', distance)
+    //If its smaller then the radius of the circle we are inside
+    return distance <= gMeme.lines[0].size
+}
+
+function setTxtDrag(isDrag) {
+    gMeme.lines[0].isDrag = isDrag
+}
+
+// Move the circle in a delta, diff from the pervious pos
+function moveTxt(dx, dy) {
+    gMeme.lines[0].pos.x += dx
+    gMeme.lines[0].pos.y += dy
+}
+
+
+function renderCanvas() {
+    renderMeme()
+    //Set the backgournd color to grey
+    gCtx.fillStyle = '#ede5ff'
+    //Clear the canvas,  fill it with grey background
+    gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height)
+    renderTxt()
+}
+
+function renderTxt() {
+   
+    //Get the props we need from the circle
+    const { txt, size, align, txtColor, fillColor, font, pos } = getMeme().lines[0]
+    //Draw the circle
+    drawText(txt, size, align, txtColor, fillColor, font, pos.x, pos.y)
 }
 

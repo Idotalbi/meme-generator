@@ -33,24 +33,30 @@
         </div>
         <div class="editor-container">
             <div class="canvas-container">
-                <canvas id="canvas" height="450" width="450"></canvas>
+                <canvas id="canvas" height="600" width="600"></canvas>
             </div>
 
             <div class="editor">
                 <input type="text" class="txt-line-input" placeholder="Enter Text Here"
                     oninput="onChangeTxt(this.value)">
                 <div class="line-delete">
-                    <button class="btn btn-switch" onclick="onSwitchLine()">⇅</button>
-                    <button class="btn btn-add-line" onclick="onAddLine()">+</button>
-                    <button class="btn btn-delete-line" onclick="onDeleteLine()">-</button>
+                    <button title="switch line" class="btn btn-switch" onclick="onSwitchLine()">⇅</button>
+                    <button title="add line" class="btn btn-add-line" onclick="onAddLine()">+</button>
+                    <button class="btn btn-delete-line " onclick="onDeleteLine()">
+                        <i title="delete line" class="fa-solid fa-trash-can"></i>
+                    </button>
 
                 </div>
                 <div class="editor-txt">
                     <button class="btn btn-increase" onclick="onChangeFontSize(5)">A+</button>
                     <button class="btn btn-decrease" onclick="onChangeFontSize(-5)">A-</button>
-                    <button class="btn btn-align-left" onclick="onAlign('left')">left</button>
+                    <button class="btn btn-align-left" onclick="onAlign('left')">
+                        <i class="fa-solid fa-align-left"></i>
+                    </button>
                     <button class="btn btn-align-center" onclick="onAlign('center')">☰</button>
-                    <button class="btn btn-align-right" onclick="onAlign('right')">right</button>
+                    <button class="btn btn-align-right" onclick="onAlign('right')">
+                        <i class="fa-solid fa-align-right"></i>
+                    </button>
                     <select name="font" class="font-input" onclick="onChangeFont(value)">
                         <option value="">Select Font</option>
                         <option value="impact">impact</option>
@@ -61,10 +67,12 @@
                         <option value="Georgia">Georgia</option>
                         <option value="fantasy">fantasy</option>
                     </select>
-                    <input type="color" class="input-txt-color" oninput="onChangeTxtColor(this.value)">
-                    <input type="color" class="input-fill-color" oninput="onChangeFillColor(this.value)">
-                    <button class="btn btn-down-line" onclick="onLineDown()">↓</button>
-                    <button class="btn btn-up-line" onclick="onLineUp()">↑</button>
+                    <input title="Text color" type="color" class="input-txt-color"
+                        oninput="onChangeTxtColor(this.value)">
+                    <input title="Fill color" type="color" class="input-fill-color"
+                        oninput="onChangeFillColor(this.value)">
+                    <button title="Move Line" class="btn btn-down-line" onclick="onLineDown()">↓</button>
+                    <button title="Move Line" class="btn btn-up-line" onclick="onLineUp()">↑</button>
                 </div>
 
                 <div class="stickers-container">
@@ -93,11 +101,13 @@
 
     </main>
 
+    <script src="js/lib/hammer.js"></script>
     <script src="js/service/meme-service.js"></script>
     <script src="js/share-in-facebook.js"></script>
     <script src="js/upload-from-local.js"></script>
     <script src="js/meme-controller.js"></script>
     <script src="js/gallery-controller.js"></script>
+    <script src="https://kit.fontawesome.com/d9d5f12bc7.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
 

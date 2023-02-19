@@ -36,6 +36,13 @@ button {
     height: 50px; */
 }
 
-.stickers-input-container{
+.stickers-input-container {
     font-size: 1.5em;
+}
+
+
+
+.canvas-container {
+    width: 600px;
+    height: 600px;
 }

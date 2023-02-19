@@ -4,12 +4,13 @@
         grid-template-columns: 1fr;
     }
 
-    .canvas-container {
+    /* .canvas-container {
         margin-left: 20px;
-    }
+    } */
 
     #canvas {
-        margin-left: 20px;
+        margin-left: -50px;
+
     }
 
     .main-screen {
@@ -92,10 +93,7 @@
 
 /* TABLET */
 @media (min-width: 600px) {
-    #canvas {
-        margin-left: 100px;
-    }
-
+   
     .editor-container {
         grid-template-columns: 1fr;
     }
@@ -133,13 +131,7 @@
 
 /* DESKTOP */
 @media (min-width: 970px) {
-    #canvas {
-        margin-left: 30px;
-    }
-    .canvas-container{
-        margin-left: 30px;
-    }
-
+ 
     .editor-container {
         grid-template-columns: 1fr 1fr;
     }
@@ -153,18 +145,15 @@
         cursor: auto;
     }
 
-    /* scrollbar width */
     .gallery::-webkit-scrollbar {
         width: 13px;
     }
 
-    /* scrollbar track */
     .gallery::-webkit-scrollbar-track {
         background-color: var(--clr1);
         border-radius: 10.286rem;
     }
 
-    /* scrollbar handle */
     .gallery::-webkit-scrollbar-thumb {
         border-radius: 10rem;
         background-image: var(--clr0);

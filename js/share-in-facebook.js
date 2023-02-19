@@ -1,5 +1,5 @@
 function onUploadImg() {
-    const imgDataUrl = gElCanvas.toDataURL('image/jpeg') // Gets the canvas content as an image format
+    const imgDataUrl = gElCanvas.toDataURL('image/jpg') // Gets the canvas content as an image format
 
     // A function to be called if request succeeds
     function onSuccess(uploadedImgUrl) {
