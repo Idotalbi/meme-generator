@@ -2,6 +2,7 @@
 
     .editor-container {
         grid-template-columns: 1fr;
+        width: 100%;
     }
 
     /* .canvas-container {
@@ -10,7 +11,8 @@
 
     #canvas {
         margin-left: -50px;
-
+        /* width: 450px;
+        height: 450px; */
     }
 
     .main-screen {
@@ -93,7 +95,7 @@
 
 /* TABLET */
 @media (min-width: 600px) {
-   
+
     .editor-container {
         grid-template-columns: 1fr;
     }
@@ -131,7 +133,7 @@
 
 /* DESKTOP */
 @media (min-width: 970px) {
- 
+
     .editor-container {
         grid-template-columns: 1fr 1fr;
     }
